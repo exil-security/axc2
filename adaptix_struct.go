@@ -9,8 +9,7 @@ type ListenerData struct {
 	Type      string `json:"l_type"`
 	BindHost  string `json:"l_bind_host"`
 	BindPort  string `json:"l_bind_port"`
-	AgentHost string `json:"l_agent_host"`
-	AgentPort string `json:"l_agent_port"`
+	AgentAddr string `json:"l_agent_addr"`
 	Status    string `json:"l_status"`
 	Data      string `json:"l_data"`
 	Watermark string `json:"l_watermark"`
