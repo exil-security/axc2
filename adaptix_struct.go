@@ -42,6 +42,8 @@ type AgentData struct {
 	ACP          int    `json:"a_acp"`
 	CreateTime   int64  `json:"a_create_time"`
 	LastTick     int    `json:"a_last_tick"`
+	KillDate     int    `json:"a_killdate"`
+	WorkingTime  int    `json:"a_workingtime"`
 	Tags         string `json:"a_tags"`
 	Mark         string `json:"a_mark"`
 	Color        string `json:"a_color"`
@@ -71,14 +73,24 @@ type ConsoleMessageData struct {
 	Text    string `json:"m_text"`
 }
 
-type ListingFileData struct {
+type ListingFileDataWin struct {
 	IsDir    bool   `json:"b_is_dir"`
 	Size     int64  `json:"b_size"`
 	Date     int64  `json:"b_date"`
 	Filename string `json:"b_filename"`
 }
 
-type ListingProcessData struct {
+type ListingFileDataUnix struct {
+	IsDir    bool   `json:"b_is_dir"`
+	Mode     string `json:"b_mode"`
+	User     string `json:"b_user"`
+	Group    string `json:"b_group"`
+	Size     int64  `json:"b_size"`
+	Date     string `json:"b_date"`
+	Filename string `json:"b_filename"`
+}
+
+type ListingProcessDataWin struct {
 	Pid         uint   `json:"b_pid"`
 	Ppid        uint   `json:"b_ppid"`
 	SessionId   uint   `json:"b_session_id"`
@@ -87,7 +99,15 @@ type ListingProcessData struct {
 	ProcessName string `json:"b_process_name"`
 }
 
-type ListingDrivesData struct {
+type ListingProcessDataUnix struct {
+	Pid         uint   `json:"b_pid"`
+	Ppid        uint   `json:"b_ppid"`
+	TTY         string `json:"b_tty"`
+	Context     string `json:"b_context"`
+	ProcessName string `json:"b_process_name"`
+}
+
+type ListingDrivesDataWin struct {
 	Name string `json:"b_name"`
 	Type string `json:"b_type"`
 }
@@ -105,6 +125,16 @@ type DownloadData struct {
 	Date       int64  `json:"d_date"`
 	State      int    `json:"d_state"`
 	File       *os.File
+}
+
+type ScreenData struct {
+	ScreenId  string `json:"s_screen_id"`
+	User      string `json:"s_user"`
+	Computer  string `json:"s_computer"`
+	LocalPath string `json:"s_local_path"`
+	Note      string `json:"s_note"`
+	Date      int64  `json:"s_date"`
+	Content   []byte `json:"s_content"`
 }
 
 type TunnelData struct {
