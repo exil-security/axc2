@@ -49,6 +49,11 @@ type AgentData struct {
 	Color        string `json:"a_color"`
 }
 
+type TaskDataTunnel struct {
+	ChannelId int
+	Data	  TaskData
+}
+
 type TaskData struct {
 	Type        int    `json:"t_type"`
 	TaskId      string `json:"t_task_id"`
@@ -150,6 +155,8 @@ type TunnelData struct {
 	Client    string `json:"p_client"`
 	Fhost     string `json:"p_fhost"`
 	Fport     string `json:"p_fport"`
+	AuthUser  string `json:"p_auth_user"`
+	AuthPass  string `json:"p_auth_pass"`
 }
 
 type PivotData struct {
