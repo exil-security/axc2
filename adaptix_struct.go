@@ -59,6 +59,7 @@ type TaskData struct {
 	TaskId      string `json:"t_task_id"`
 	AgentId     string `json:"t_agent_id"`
 	Client      string `json:"t_client"`
+	HookId      string `json:"t_hook_id"`
 	User        string `json:"t_user"`
 	Computer    string `json:"t_computer"`
 	StartDate   int64  `json:"t_start_date"`
@@ -164,4 +165,17 @@ type PivotData struct {
 	PivotName     string `json:"p_pivot_name"`
 	ParentAgentId string `json:"p_parent_agent_id"`
 	ChildAgentId  string `json:"p_child_agent_id"`
+}
+
+type CredsData struct {
+	CredId   string `json:"c_creds_id"`
+	Username string `json:"c_username"`
+	Password string `json:"c_password"`
+	Realm    string `json:"c_realm"`
+	Type     string `json:"c_type"`
+	Tag      string `json:"c_tag"`
+	Date     int64  `json:"c_date"`
+	Storage  string `json:"c_storage"`
+	AgentId  string `json:"c_agent_id"`
+	Host     string `json:"c_host"`
 }
