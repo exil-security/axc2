@@ -6,6 +6,8 @@ import (
 
 type ListenerData struct {
 	Name      string `json:"l_name"`
+	RegName   string `json:"l_reg_name"`
+	Protocol  string `json:"l_protocol"`
 	Type      string `json:"l_type"`
 	BindHost  string `json:"l_bind_host"`
 	BindPort  string `json:"l_bind_port"`
@@ -179,3 +181,18 @@ type CredsData struct {
 	AgentId  string `json:"c_agent_id"`
 	Host     string `json:"c_host"`
 }
+
+type TargetData struct {
+	TargetId string `json:"t_target_id"`
+	Computer string `json:"t_computer"`
+	Domain   string `json:"t_domain"`
+	Address  string `json:"t_address"`
+	Os       int    `json:"t_os"`
+	OsDesk   string `json:"t_os_desk"`
+	Tag      string `json:"t_tag"`
+	Info     string `json:"t_info"`
+	Date     int64  `json:"t_date"`
+	Alive    bool   `json:"t_alive"`
+	Owned    bool   `json:"t_owned"`
+}
+
