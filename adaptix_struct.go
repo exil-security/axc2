@@ -53,7 +53,7 @@ type AgentData struct {
 
 type TaskDataTunnel struct {
 	ChannelId int
-	Data	  TaskData
+	Data      TaskData
 }
 
 type TaskData struct {
@@ -118,6 +118,12 @@ type ListingProcessDataUnix struct {
 type ListingDrivesDataWin struct {
 	Name string `json:"b_name"`
 	Type string `json:"b_type"`
+}
+
+type ChatData struct {
+	Username string `json:"c_username"`
+	Message  string `json:"c_message"`
+	Date     int64  `json:"c_date"`
 }
 
 type DownloadData struct {
@@ -195,4 +201,3 @@ type TargetData struct {
 	Alive    bool   `json:"t_alive"`
 	Owned    bool   `json:"t_owned"`
 }
-
